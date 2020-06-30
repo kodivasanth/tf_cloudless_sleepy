@@ -23,6 +23,6 @@ resource "null_resource" "sleep-remote" {
   }
 provisioner "remote-exec" {
     inline = ["ping localhost -c 10", "sleep 3", "ping localhost -c 15", "touch test.txt"]
-    timeout = 45
+    timeout = "${var.sleepy_time}"
   }
 }
