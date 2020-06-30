@@ -7,7 +7,7 @@ data "template_file" "test" {
   }
 }
 
-resource "null_resource" "sleep" {
+resource "null_resource" "sleep-local" {
   triggers {
     uuid = "${uuid()}"
   }
@@ -17,7 +17,7 @@ resource "null_resource" "sleep" {
   }
 } 
 
-resource "null_resource" "sleep" {
+resource "null_resource" "sleep-remote" {
   triggers {
     uuid = "${uuid()}"
   }
