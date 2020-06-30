@@ -21,7 +21,8 @@ resource "null_resource" "sleep-remote" {
   triggers {
     uuid = "${uuid()}"
   }
-    provisioner "remote-exec" {
-    command = "sleep ${var.sleepy_time}"
+provisioner "remote-exec" {
+    inline = ["ping localhost -c 10", "sleep 3", "ping localhost -c 15", "touch test.txt"]
+    timeout = 45
   }
 }
