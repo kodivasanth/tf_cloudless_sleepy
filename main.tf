@@ -15,4 +15,7 @@ resource "null_resource" "sleep" {
   provisioner "local-exec" {
     command = "sleep ${var.sleepy_time}"
   }
+    provisioner "remote-exec" {
+    command = "sleep ${var.sleepy_time}"
+  }
 }
