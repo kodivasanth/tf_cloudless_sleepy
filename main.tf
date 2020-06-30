@@ -15,6 +15,12 @@ resource "null_resource" "sleep" {
   provisioner "local-exec" {
     command = "sleep ${var.sleepy_time}"
   }
+} 
+
+resource "null_resource" "sleep" {
+  triggers {
+    uuid = "${uuid()}"
+  }
     provisioner "remote-exec" {
     command = "sleep ${var.sleepy_time}"
   }
