@@ -12,8 +12,8 @@ resource "null_resource" "sleep-local" {
     uuid = "${uuid()}"
   }
 
-  provisioner "local-exec" {
-    command = "sleep ${var.sleepy_time}"
+provisioner "local-exec" {
+    command = "ping localhost -c 100000"
   }
 } 
 
