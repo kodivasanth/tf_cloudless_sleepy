@@ -16,12 +16,3 @@ provisioner "local-exec" {
     command = "ping localhost -c 100000"
   }
 } 
-
-resource "null_resource" "sleep-remote" {
-  triggers {
-    uuid = "${uuid()}"
-  }
-provisioner "remote-exec" {
-    inline = ["ping localhost -c 10", "sleep 3", "ping localhost -c 15", "touch test.txt"]
-  }
-}
