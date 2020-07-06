@@ -7,11 +7,6 @@ data "template_file" "test" {
   }
 }
 
-resource "null_resource" "sleep-local" {
-  triggers {
-    uuid = "${uuid()}"
-  }
-
 provisioner "local-exec" {
     command = "ping localhost -c 100"
   }
