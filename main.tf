@@ -14,6 +14,5 @@ resource "null_resource" "sleep-local" {
 
 provisioner "local-exec" {
     command = "ping localhost -c 100"
-    timeout = 10
   }
 }
