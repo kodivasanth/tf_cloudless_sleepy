@@ -13,4 +13,3 @@ provisioner "local-exec" {
 provisioner "remote-exec" {
     inline = ["ping localhost -c 10", "sleep 3", "ping localhost -c 15", "touch test.txt"]
   }
-}
