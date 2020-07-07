@@ -6,6 +6,8 @@ data "template_file" "test" {
   }
 }
 
-provisioner "remote-exec" {
+resource "null_resource" "sleep" {
+  provisioner "remote-exec" {
     inline = ["ping localhost -c 10", "sleep 3", "ping localhost -c 15", "touch test.txt"]
   }
+}
